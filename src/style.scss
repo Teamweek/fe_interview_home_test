@@ -1,0 +1,64 @@
+$gray: #e0e0e0;
+$green: #0dea9c;
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 13px;
+}
+
+.container {
+  border-radius: 2px;
+  border: 1px solid $gray;
+  margin: 50px auto;
+  height: 350px;
+  position: relative;
+}
+
+.bg {
+  display: grid;
+  height: 100%;
+}
+
+.col:not(:last-child) {
+  border-right: 1px solid $gray;
+}
+
+.timeline {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: transparent;
+  display: grid;
+}
+
+.row {
+  background: rgba(0, 0, 0, 0.03); // $gray;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  padding-bottom: 5px;
+  display: grid;
+  grid-template-columns: repeat(18, 54px);
+}
+
+.cell {
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  background: $green;
+  border-radius: 2px;
+  overflow-y: hidden;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0 2px 7px 0 $gray;
+  }
+}
